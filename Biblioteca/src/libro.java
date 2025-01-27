@@ -1,44 +1,30 @@
-
-
 public class libro {
     private String titulo;
     private String autor;
-    private String categoria;
+    private Categoria categoria;
     private boolean disponible;
 
-    //Constructor por defecto
-    public libro() {
+    public libro(){
         this.titulo = "";
         this.autor = "";
-        this.categoria = ""; 
+        this.categoria = null;
+        this.disponible = true;
     }
 
-    //Constructor parametrizado
-    public libro(String titulo, String autor, String categoria) {
-        this();
+    public libro(String titulo, String autor, Categoria categoria, boolean disponible) {
         this.titulo = titulo;
         this.autor = autor;
         this.categoria = categoria;
-    }
-    //Todos los libros registrados desde el principio han de estar parametrizados (valores específicos)
-
-    public String getTitulo(){
-        return this.titulo;
-    }
-    public void setTitulo(String titulo){
-        this.titulo=titulo;
-    }
-    public String getAutor(){
-        return this.autor;
-    }
-    public void setAutor(String autor){
-        this.autor=autor;
-    }
-    public String getCategoria(){
-        return this.categoria;
-    }
-    public void setCategoria(String categoria){
-        this.categoria=categoria;
+        this.disponible = disponible;
     }
 
+    public String getTitulo(){return this.titulo;}
+    public String getAutor(){return this.autor;}
+    public Categoria getCategoria(){return this.categoria;}
+    public boolean getDisponible(){return this.disponible;}
+
+    public void setTitulo(String titulo){this.titulo=titulo;}
+    public void setAutor(String autor){this.autor=autor;}
+    public void setCategoria(Categoria categoria){this.categoria=categoria;}
+    public void setDisponible(boolean disponible){this.disponible=disponible;}
 }
