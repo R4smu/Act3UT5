@@ -1,32 +1,36 @@
-public class usuario{
+public class Usuario{
     private String usuario;
     private String contraseña;
-    private int numPrestados;
     private boolean admin;
+    private int numPrestados;
 
-    public usuario(){
-        this.usuario = "";
-        this.contraseña = "";
-        this.numPrestados = 0;
-        this.admin = false;
+    public Usuario() {
+        this.usuario = usuario;
+        this.contraseña = contraseña;
+        this.admin = admin;
+        this.numPrestados = numPrestados;
     }
 
-    public usuario(String usuario, String contraseña, int numPrestados, boolean admin){
-        this.usuario=usuario;
-        this.contraseña=contraseña;
-        this.numPrestados=numPrestados;
-        this.admin=admin;
+    public Usuario(String usuario, String contraseña, boolean admin, int numPrestados) {
+        usuario = "";
+        contraseña = "";
+        admin = false;
+        numPrestados = 0;
     }
 
     public String getUsuario(){return this.usuario;}
     public String getContraseña(){return this.contraseña;}
-    public int getNumPrestados(){return this.numPrestados;}
     public boolean getAdmin(){return this.admin;}
+    public int getNumPrestados(){return this.numPrestados;}
     
     public void setUsuario(String usuario){this.usuario=usuario;}
     public void setContraseña(String contraseña){this.contraseña=contraseña;}
-    public void setNumPrestados(int numPrestados){this.numPrestados=numPrestados;}
     public void setAdmin(boolean admin){this.admin=admin;}
+    public void setNumPrestados(int numPrestados){this.numPrestados=numPrestados;}
+
+    public boolean verificarContraseña(String contraseña) {return this.contraseña.equals(contraseña);}
+    public void incrementarPrestamos() {numPrestados++;}
+    public void decrementarPrestamos() {numPrestados--;}
 
     @Override
     public String toString() {
@@ -37,6 +41,5 @@ public class usuario{
                 ", admin='" + getAdmin() + "'" +
                 "}";
     }
-    
 }
 
