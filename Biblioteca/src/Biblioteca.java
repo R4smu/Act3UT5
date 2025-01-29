@@ -1,6 +1,6 @@
 import java.util.Scanner;
 /*
- * @autor: Lucas Rasmussen Marcos y Jhansell
+ * @autor: Lucas Rasmussen Marcos y Jhansell García Vargas
  */
 public class Biblioteca {
     public static void main(String[] args) {

@@ -37,4 +37,23 @@ public class GestorUsuario {
             System.out.println("Usuario: " + usuarios[i].getUsuario() + ", Admin: " + usuarios[i].getAdmin());
         }
     }
+
+    public void mostrarUsuarioConMasPrestamos() {
+        int maxPrestamos = -1;
+        Usuario usuarioConMasPrestamos = null;
+
+        for (int i = 0; i < numUsuarios; i++) {
+            if (usuarios[i].getNumPrestados() > maxPrestamos) {
+                maxPrestamos = usuarios[i].getNumPrestados();
+                usuarioConMasPrestamos = usuarios[i];
+            }
+        }
+        
+        if (usuarioConMasPrestamos != null) {
+            System.out.println("El usuario con más préstamos activos es: " + usuarioConMasPrestamos.getUsuario());
+            System.out.println("Número de préstamos activos: " + usuarioConMasPrestamos.getNumPrestados());
+        } else {
+            System.out.println("No hay usuarios con préstamos activos.");
+        }
+    }
 }

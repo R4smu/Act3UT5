@@ -106,6 +106,27 @@ public class GestorLibros {
             }
         }
         System.out.println("Total de préstamos activos: " + prestamosActivos);
-    } 
+    }
+
+    public void mostrarLibrosMasPrestados() {
+        int prestados = 0;
+        for (int i = 0; i < numLibros; i++) {
+            if (libros[i].getPrestado()) {
+                prestados++;
+            }
+        }
+        
+        System.out.println("Número de libros prestados: " + prestados);
+        if (prestados > 0) {
+            System.out.println("Libros actualmente prestados:");
+            for (int i = 0; i < numLibros; i++) {
+                if (libros[i].getPrestado()) {
+                    System.out.println(libros[i]);
+                }
+            }
+        } else {
+            System.out.println("No hay libros prestados en este momento.");
+        }
+    }
 }
 
