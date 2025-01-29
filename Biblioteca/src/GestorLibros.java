@@ -106,6 +106,6 @@ public class GestorLibros {
             }
         }
         System.out.println("Total de préstamos activos: " + prestamosActivos);
-    }
+    } 
 }
 
