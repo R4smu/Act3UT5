@@ -4,24 +4,11 @@ public class Libro {
     private Categoria categoria;
     private boolean prestado;
 
-    public Libro(){
-        this.titulo = "";
-        this.autor = "";
-        this.categoria = categoria;
-        this.prestado = false;
-    }
-
     public Libro(String titulo, String autor, Categoria categoria, boolean prestado) {
         this.titulo = titulo;
         this.autor = autor;
         this.categoria = categoria;
         this.prestado = prestado;
-    }
-
-    public Libro(String titulo, String autor, Categoria categoria) {
-        this.titulo = titulo;
-        this.autor = autor;
-        this.categoria = categoria;
     }
 
     public String getTitulo(){return this.titulo;}
@@ -36,4 +23,9 @@ public class Libro {
 
     public void prestar() {this.prestado = true;}
     public void devolver() {this.prestado = false;}
+
+    @Override
+    public String toString() {
+    return "Título: " + getTitulo() + ", Autor: " + getAutor() + ", Categoría: " + getCategoria() + ", Prestado: " + (getPrestado() ? "Sí" : "No");
+}
 }

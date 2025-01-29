@@ -7,8 +7,8 @@ public class GestorLibros {
     public GestorLibros() {
         libros = new Libro[5];
         numLibros = 0;
-        libros[numLibros++] = new Libro("El Quijote", "Miguel de Cervantes", Categoria.NOVELA);
-        libros[numLibros++] = new Libro("1984", "George Orwell", Categoria.FICCION);
+        libros[numLibros++] = new Libro("Las aventuras de Pepito Grillo", "Pepito", Categoria.AVENTURAS, false);
+        libros[numLibros++] = new Libro("Gustavo 2: Más Gustavo Que Nunca", "Gustavo", Categoria.INFANTIL, false);
     }
 
     public void mostrarLibros() {
@@ -50,7 +50,7 @@ public class GestorLibros {
         System.out.print("Introduce la categoría del libro: ");
         String categoria = scanner.nextLine().toUpperCase();
         Categoria categoriaEnum = Categoria.valueOf(categoria);
-        libros[numLibros++] = new Libro(titulo, autor, categoriaEnum);
+        libros[numLibros++] = new Libro(titulo, autor, categoriaEnum, false);
         System.out.println("Libro agregado exitosamente.");
     }
 
@@ -74,7 +74,7 @@ public class GestorLibros {
         System.out.print("Introduce el título del libro que deseas prestar: ");
         String titulo = scanner.nextLine();
         for (int i = 0; i < numLibros; i++) {
-            if (libros[i].getTitulo().equalsIgnoreCase(titulo) && !libros[i].isPrestado()) {
+            if (libros[i].getTitulo().equalsIgnoreCase(titulo) && !libros[i].getPrestado()) {
                 libros[i].prestar();
                 usuarioActivo.incrementarPrestamos();
                 System.out.println("Libro prestado exitosamente.");
@@ -99,7 +99,13 @@ public class GestorLibros {
     }
 
     public void mostrarEstadisticas() {
-        System.out.println("Total de préstamos: " + numLibros);
+        int prestamosActivos = 0;
+        for (int i = 0; i < numLibros; i++) {
+            if (libros[i].getPrestado()) {
+                prestamosActivos++;
+            }
+        }
+        System.out.println("Total de préstamos activos: " + prestamosActivos);
     }
 }
 

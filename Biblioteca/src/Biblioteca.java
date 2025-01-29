@@ -1,7 +1,5 @@
 import java.util.Scanner;
-
 public class Biblioteca {
-
     public static void main(String[] args) {
         GestorLibros gestorLibros = new GestorLibros();
         GestorUsuario gestorUsuario = new GestorUsuario();

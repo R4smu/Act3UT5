@@ -4,18 +4,11 @@ public class Usuario{
     private boolean admin;
     private int numPrestados;
 
-    public Usuario() {
+    public Usuario(String usuario, String contraseña, boolean admin, int numPrestados) {
         this.usuario = usuario;
         this.contraseña = contraseña;
         this.admin = admin;
         this.numPrestados = numPrestados;
-    }
-
-    public Usuario(String usuario, String contraseña, boolean admin, int numPrestados) {
-        usuario = "";
-        contraseña = "";
-        admin = false;
-        numPrestados = 0;
     }
 
     public String getUsuario(){return this.usuario;}

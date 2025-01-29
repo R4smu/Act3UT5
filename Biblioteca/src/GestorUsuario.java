@@ -6,8 +6,7 @@ public class GestorUsuario {
 
     public GestorUsuario() {
         usuarios = new Usuario[5];
-        numUsuarios = 0;
-        usuarios[numUsuarios++] = new Usuario()
+        usuarios[numUsuarios++] = new Usuario("admin", "admin123", true, 0);
         usuarios[numUsuarios++] = new Usuario("usuario", "usuario123", false, 0);
     }
 
